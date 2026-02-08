@@ -6,10 +6,9 @@ on:
     paths:
       - 'Terraform/**'
   push:
-    branches: [ main ]
-    paths:
-      - 'Terraform/**'
-      
+    branches:
+      - main
+  
 env:
   AWS_REGION: us-east-1
 
