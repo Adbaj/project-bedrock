@@ -23,24 +23,25 @@ output "assets_bucket_name" {
   value       = aws_s3_bucket.assets.id
 }
 
-# Application URL
+# Application URL - Fixed reference
 output "application_url" {
-  value = try(
-    "http://${kubernetes_service.retail_ui.status[0].load_balancer[0].ingress[0].hostname}",
-    "LoadBalancer URL pending..."
+  description = "Retail Store Application URL"
+  value       = try(
+    "http://${data.kubernetes_service.ui.status[0].load_balancer[0].ingress[0].hostname}",
+    "LoadBalancer URL pending - run: kubectl get svc -n retail-app ui"
   )
 }
 
-
 # Developer credentials (sensitive)
+
 output "dev_access_key_id" {
-  description = "Developer Access Key ID"
-  value       = aws_iam_access_key.bedrock_dev.id
-  sensitive   = true
+  value     = aws_iam_access_key.bedrock_dev.id
+  sensitive = true
 }
 
 output "dev_secret_access_key" {
-  description = "Developer Secret Access Key"
-  value       = aws_iam_access_key.bedrock_dev.secret
-  sensitive   = true
+  value     = aws_iam_access_key.bedrock_dev.secret
+  sensitive = true
 }
+
+

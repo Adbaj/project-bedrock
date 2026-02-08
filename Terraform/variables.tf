@@ -19,7 +19,7 @@ variable "vpc_name" {
 variable "student_id" {
   description = "Your Student ID"
   type        = string
-  default     = "12345"  
+  default     = "alt-soe-025-1339"  
 }
 
 variable "namespace" {
