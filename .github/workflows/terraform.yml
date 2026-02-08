@@ -4,12 +4,12 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'terraform/**'
+      - 'Terraform/**'
   push:
     branches: [ main ]
     paths:
-      - 'terraform/**'
-
+      - 'Terraform/**'
+      
 env:
   AWS_REGION: us-east-1
 
