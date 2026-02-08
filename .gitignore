@@ -11,8 +11,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Lambda
-lambda/*.zip
+
 
 # Misc
 .DS_Store
