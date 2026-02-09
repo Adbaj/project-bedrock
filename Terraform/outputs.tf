@@ -23,14 +23,6 @@ output "assets_bucket_name" {
   value       = aws_s3_bucket.assets.id
 }
 
-# Application URL - Fixed reference
-output "application_url" {
-  description = "Retail Store Application URL"
-  value       = try(
-    "http://${data.kubernetes_service.ui.status[0].load_balancer[0].ingress[0].hostname}",
-    "LoadBalancer URL pending - run: kubectl get svc -n retail-app ui"
-  )
-}
 
 # Developer credentials (sensitive)
 
