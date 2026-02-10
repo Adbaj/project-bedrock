@@ -27,7 +27,7 @@ module "eks" {
       desired_size = 2
 
       instance_types = ["t3.small"]  
-      capacity_type  = "SPOT"        
+      capacity_type  = "ON_DEMAND"        
 
       # EBS optimization
       block_device_mappings = {
