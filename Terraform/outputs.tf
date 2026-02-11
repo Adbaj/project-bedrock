@@ -26,14 +26,6 @@ output "assets_bucket_name" {
 
 # Developer credentials (sensitive)
 
-output "dev_access_key_id" {
-  value     = aws_iam_access_key.bedrock_dev.id
-  sensitive = true
-}
 
-output "dev_secret_access_key" {
-  value     = aws_iam_access_key.bedrock_dev.secret
-  sensitive = true
-}
 
 
